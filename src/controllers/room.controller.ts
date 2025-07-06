@@ -1,6 +1,6 @@
-import asyncHandler from "@/helpers/asyncHandler";
-import { RoomServices } from "@/services";
-import { NextFunction, Request, Response } from "express";
+import asyncHandler from '@/helpers/asyncHandler';
+import { RoomServices } from '@/services';
+import { NextFunction, Request, Response } from 'express';
 
 // CREATE ROOM
 export const createRoom = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {

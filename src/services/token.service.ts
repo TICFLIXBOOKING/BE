@@ -36,7 +36,6 @@ export const verifyToken = async (token: string, secretKey: string, type: string
     return foundedToken;
 };
 
-
 export const generateAuthTokens = async (user: any) => {
     const accessToken = generateToken(user, config.jwt.accessTokenKey, config.jwt.accessExpiration);
     const refreshToken = generateToken(user, config.jwt.refreshTokenKey, config.jwt.refreshTokenExpiration);

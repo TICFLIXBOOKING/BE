@@ -6,7 +6,7 @@ import { NextFunction, Request, Response } from 'express';
 export const createCinema = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
     return await CinemaServices.createCinema(req, res, next);
 });
-// GET ROOM BY CINEMA 
+// GET ROOM BY CINEMA
 export const getRoomByCinema = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
     return await CinemaServices.getRoomByCinema(req, res, next);
 });
