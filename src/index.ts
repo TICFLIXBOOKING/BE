@@ -7,6 +7,7 @@ const PORT = config.port || 8080;
 const HOSTNAME = config.hostname;
 
 const server = http.createServer(app);
+console.log('tinh nang moi')
 connectDB().then(async () => {
     server.listen(PORT, HOSTNAME, async () => {
         // const ngrok = await import('ngrok');

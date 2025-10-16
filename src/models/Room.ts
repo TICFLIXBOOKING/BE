@@ -32,20 +32,26 @@ export interface IRoom extends Document {
 // -----------------------------
 // Schema Definitions
 // -----------------------------
-const SeatSchema = new Schema<ISeat>({
-    row: { type: Number, required: true },
-    col: { type: Number, required: true },
-    label: { type: String, required: true },
-    type: {
-        type: String,
-        enum: ['regular', 'vip', 'couple'],
-        default: 'regular',
+const SeatSchema = new Schema<ISeat>(
+    {
+        row: { type: Number, required: true },
+        col: { type: Number, required: true },
+        label: { type: String, required: true },
+        type: {
+            type: String,
+            enum: ['regular', 'vip', 'couple'],
+            default: 'regular',
+        },
+        colSpan: {
+            type: Number,
+            default: 1,
+        },
     },
-    colSpan: {
-        type: Number,
-        default: 1,
+    {
+        versionKey: false,
+        _id: false,
     },
-});
+);
 
 const SeatTypeSchema = new Schema<ISeatType>(
     {
@@ -64,7 +70,7 @@ const SeatTypeSchema = new Schema<ISeatType>(
             required: true,
         },
     },
-    { _id: false },
+    { _id: false, versionKey: false },
 );
 
 const RoomSchema = new Schema<IRoom>({
